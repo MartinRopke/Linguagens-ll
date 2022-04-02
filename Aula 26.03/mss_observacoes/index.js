@@ -16,13 +16,13 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
         observaoesPoRLembreteId[req.params.id] = observaoesDoLembrete
         res.status(201).send(observaoesDoLembrete)
     }else{
-        res.status(404).send("Id preisa ser um numero aniamal!")
+        res.status(404).send('<font size="20"><strong>Id preisa ser um numero aniamal!</strong></font>')
     }
 })
 
 //GET
 app.get('/lembretes/:id/observacoes', (req, res) => {
-     res.send(observaoesPoRLembreteId[req.params.id] || '<image src="https://th.bing.com/th/id/OIP.IZJSPD7EUk6sdKfNaltGMAHaFc?pid=ImgDet&rs=1"><div><strong font size = "20">Esse id não esxiste</strong></div>')  
+     res.send(observaoesPoRLembreteId[req.params.id] || '<image src="https://th.bing.com/th/id/OIP.IZJSPD7EUk6sdKfNaltGMAHaFc?pid=ImgDet&rs=1"><div><font size="20"><strong>Esse id não esxiste</strong></font></div>')  
 })
 
 app.listen(5000, () => {
