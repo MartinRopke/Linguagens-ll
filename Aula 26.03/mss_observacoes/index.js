@@ -16,7 +16,7 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
         observaoesPoRLembreteId[req.params.id] = observaoesDoLembrete
         res.status(201).send(observaoesDoLembrete)
     }else{
-        res.status(404).send('<font size="20"><strong>Id preisa ser um numero aniamal!</strong></font>')
+        res.status(404).send('<font size="20"><strong>Id precisa ser um numero animal!</strong></font>')
     }
 })
 
