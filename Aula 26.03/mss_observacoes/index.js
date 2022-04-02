@@ -22,8 +22,7 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
 
 //GET
 app.get('/lembretes/:id/observacoes', (req, res) => {
-    if(observaoesPoRLembreteId[req.params.id]) res.send(observaoesPoRLembreteId[req.params.id])
-    else res.status(404).send('Esse id não esxiste')
+     res.send(observaoesPoRLembreteId[req.params.id] || '<image src="https://th.bing.com/th/id/OIP.IZJSPD7EUk6sdKfNaltGMAHaFc?pid=ImgDet&rs=1"><div><strong font size = "20">Esse id não esxiste</strong></div>')  
 })
 
 app.listen(5000, () => {
