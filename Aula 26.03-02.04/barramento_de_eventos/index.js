@@ -4,13 +4,17 @@ const app = express()
 app.use(express.json())
 
 
-app.post('/eventos', (req, res) => {
+app.post('/eventos', async (req, res) => {
     const evento = req.body
-
-    axios.post('locahost:4000/eventos', evento)
-    axios.post('locahost:5000/eventos', evento)
-
-    res.status(200).send("ok")
+    try {
+        await axios.post('http://localhost:4000/eventos', evento)
+        await axios.post('http://localhost:5000/eventos', evento)
+        res.status(200).send(json({msg:"ok"}))
+    }catch(e){
+        console.log(e)
+        res.status(500).end()
+    }
+    
 })
 
 app.listen(1000, () => {
