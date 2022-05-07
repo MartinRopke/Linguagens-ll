@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  number: Number
+  
   nome: string;
+
+  escolher(): void{
+    this.number = Math.floor(Math.random()*100) + 1
+  }
 
   alterarNome(event){
     console.log(event.target.value)

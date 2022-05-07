@@ -1,4 +1,14 @@
-<div class="conteiner m-3 border p-3">
+<div class="container my-3 border p-3">
+  <div class="form-group">
+    <label for="numeroInput">Escolha um Número</label>
+    <input type="number" class="form-control" id="numeroInput" placeholder="Escolha um número">
+    <div class="alert alert-primary mt-3 p-3 text-center">{{number}}</div>
+    <button (click)="escolher()" type="button" class="btn btn-primary">Escolher para mim</button>
+  </div>
+</div>
+
+
+<!-- <div class="conteiner m-3 border p-3">
   <form>
     <div class="from-group">
       <label for="nomeInput">Nome</label>
@@ -10,7 +20,7 @@
   </button>
 <div class="alert alert-primary mt-3 p-3">{{nome}}</div>
 
-</div>
+</div> -->
 
 <!-- Meu nome é {{nome}} e tenho idade {{idade}} anos.
 
