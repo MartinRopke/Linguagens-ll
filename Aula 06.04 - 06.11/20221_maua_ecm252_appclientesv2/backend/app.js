@@ -41,15 +41,11 @@ app.delete('/api/clientes/:id', (req, res) => {
 })
 
 
-app.post('/api/clientes', (req, res, next) => {
-  const cli = new Cliente (req.body)
-  // const cliente = new Cliente({
-  //   nome: req.body.nome,
-  //   fone: req.body.fone,
-  //   email: req.body.email
-  // })
-  cli.save()
-  res.status(201).json({mensagem: 'Cliente inserido'});
+app.post('/api/clientes', (req, res) => {
+  const cliente = new Cliente (req.body)
+  cliente.save().then(cliente => {
+    res.status(201).json({id: cliente._id, mensagem: 'Cliente inserido'});
+  })
 });
 
 app.get('/api/clientes', (req, res, next) => {
