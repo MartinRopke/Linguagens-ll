@@ -4,16 +4,9 @@ import { ClienteInserirComponent } from "./clientes/cliente-inserir.component";
 import { ClienteListaComponent } from "./clientes/cliente-lista/cliente-lista.component";
 
 const routes: Routes = [
-    //localhost:4200
-    {
-        path: '',
-        component: ClienteListaComponent
-    },
-    //localhost:4200/criar
-    {
-        path: 'criar',
-        component: ClienteInserirComponent
-    }
+    { path: '', component: ClienteListaComponent },  //localhost:4200
+    { path: 'criar', component: ClienteInserirComponent }, //localhost:4200/criar
+    { path:'editar/:idCliente', component: ClienteInserirComponent } //localhost:4200/editar/12
 ]
 
 @NgModule({
