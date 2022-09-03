@@ -1,7 +1,4 @@
-import React from 'react'
-
-const Feedback = props => {
-    return (
+const Feedback = props => (
         <div className="d-flex justify-content-evenly m-2">
             <button
                 type="button"
@@ -16,7 +13,5 @@ const Feedback = props => {
                 {props.textoNOK}
             </button>
         </div>
-    )
-}
-
+)
 export default Feedback

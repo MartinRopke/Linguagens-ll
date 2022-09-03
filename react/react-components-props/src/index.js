@@ -11,8 +11,7 @@ const App = () => {
     const textoNOK = "Ainda não chegou"
     const funcaoOK = () => alert("Agradecemos a confirmação!")
     const funcaoNOK = () => alert("Verificaremos o ocorrido!")
-    const componenteFeedback = <Feedback textoOK={textoOK} funcaoOK={funcaoOK}
-        textoNOK={textoNOK} funcaoNOK={funcaoNOK} />
+    const componenteFeedback = <Feedback textoOK={textoOK} funcaoOK={funcaoOK} textoNOK={textoNOK} funcaoNOK={funcaoNOK} />
     return (
         <div className='container border rounded mt-2'>
             {/*linha para o título*/}
@@ -53,8 +52,6 @@ Dell - 8Gb - i5" />
                     </Cartao>
                 </div>
             </div>
-
-
         </div>
     )
 }
