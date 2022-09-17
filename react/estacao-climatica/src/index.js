@@ -33,13 +33,14 @@ class App extends React.Component {
         const d2 = new Date(anoAtual, 8, 24)
         //22/12
         const d3 = new Date(anoAtual, 11, 22)
-
+        //21/03
+        const d4 = new Date(anoAtual, 2 , 21)
         const sul = latitude < 0;
         if (data >= d1 && data < d2)
             return sul ? 'Inverno' : 'Verão'
         if (data >= d2 && data < d3)
             return sul ? 'Primavera' : 'Outono'
-        if (data >= d3 || data < d1)
+        if (data >= d3 || data < d4)
             return sul ? 'Verão' : 'Inverno'
         return sul ? 'Outono' : 'Primavera'
     }
