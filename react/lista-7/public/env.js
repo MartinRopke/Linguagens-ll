@@ -1,0 +1,3 @@
+window.env = {
+  "PEXELS_KEY": "563492ad6f917000010000017492bc8c8aea443ebc2c1265c2d6d445"
+};
