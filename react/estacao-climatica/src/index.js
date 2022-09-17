@@ -20,10 +20,6 @@ class App extends React.Component {
         mensagemDeErro: null
     }
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         this.obterLocalizacao()
     }

@@ -8,7 +8,7 @@ export class EstacaoClimatica extends React.Component {
     componentDidMount(){
         console.log('ComponentDIDMount')
         this.timer = setInterval(() => {
-            this.setState({data: new Date().toLocaleTimeString()})
+            this.setState({data: new Date().toLocaleString()})
         }, 1000)
     }
 

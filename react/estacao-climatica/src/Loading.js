@@ -4,7 +4,7 @@ export default class Loading extends Component {
     render() {
         return (
             // centralizando nos dois eixos, borda e padding
-            <div className="d-flex justify-content-center align-items-center border rounded p-3">
+            <div className="d-flex flex-column justify-content-center align-items-center border rounded p-3">
                 {/* text-whatever troca a cor */}
                 <div className="spinner-border text-primary" style={{
                     width: '3rem', 
