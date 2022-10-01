@@ -8,7 +8,6 @@ export default class Busca extends Component {
     }
 
     onTermoAlterado = event => {
-        console.log(event.target.value)
         this.setState({ termoDeBusca: event.target.value })
     }
 
