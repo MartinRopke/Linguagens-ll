@@ -10,20 +10,21 @@ const Accordion = ({itens}) => {
     }
 
     const expressaoJSX = itens.map((item , indice) => {
+        const classExibirConteudo = indice === indiceAtivo ? '' : 'hidden'
+        const classExibirIcone = indice === indiceAtivo ? 'pi-angle-down' : 'pi-angle-right'
         return (
             <Card id='accordion' key={indice} className='border-1 border-400'>
                 <div onClick={() => itemClicado(indice)}>
-                    <i className='pi pi-angle-down'/>
+                    <i className={`pi ${classExibirIcone}`}/>
                     <h5 className='inline ml-3'>{item.titulo}</h5>
                 </div>
-                <p>{item.conteudo}</p>
+                <p className={classExibirConteudo}>{item.conteudo}</p>
             </Card>
         )
     })
 
     return (
         <div>
-            <p>{indiceAtivo}</p>
             {
                 expressaoJSX
             }
