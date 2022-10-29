@@ -6,6 +6,7 @@ const Accordion = ({itens}) => {
     const [indiceAtivo, setIndiceAtivo] = useState(null)
 
     const itemClicado = indice => {
+        indice = indice === indiceAtivo ? -1:indice
         setIndiceAtivo(indice)
     }
 
