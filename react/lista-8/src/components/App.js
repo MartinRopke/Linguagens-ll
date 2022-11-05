@@ -1,5 +1,4 @@
 import React from 'react'
-import Accordion from './Accordion'
 import Busca from './Busca'
 
 const itens = [

@@ -3,13 +3,15 @@ import axios from 'axios'
 import { InputText } from "primereact/inputtext"
 import { useState } from "react"
 import { useEffect } from "react"
+import { Button } from "primereact/button"
 
 const Busca = () => {
     const [termoBusca, setTermoDeBusca] = useState('')
     const [resultados, setResultados] = useState([])
 
     useEffect(() => {
-        if(termoBusca)
+        const timoutID = setTimeout(() => {
+            if(termoBusca)
             axios.get('https://en.wikipedia.org/w/api.php',{
                 params: {
                     action: 'query',
@@ -21,6 +23,8 @@ const Busca = () => {
                     srsearch: termoBusca
                 }
             }).then(res => setResultados(res.data.query.search))
+        }, 1000)
+        return () => clearTimeout(timoutID)
     }, [termoBusca])
 
     return(
@@ -36,10 +40,17 @@ const Busca = () => {
                              {/* borda, padding e ajuste textual */}
                         <div className='border-bottom border border-1 border-400 p-2 text-center font-bold'>
                             {resultado.title}
+                            <span>
+                                <Button
+                                    icon="pi pi-send"
+                                    className="ml-2 p-button-rounded p-button-secondary"
+                                    onClick={ () => window.open(`https://en.wikipedia.org?curid=${resultado.pageid}`)}
+                                    />
+                            </span>
                         </div>
                              {/* padding */}
                         <div className='p-2'>
-                            {resultado.snippet}
+                            <span dangerouslySetInnerHTML={{__html: resultado.snippet}} />
                         </div>
                     </div>
                 ))
